@@ -14,8 +14,11 @@ module.exports = function toReadable (number) {
     
 
     if (Math.floor(number / 100) > 0) {
-        strNum = strNum + units[Math.floor(number / 100) - 1] + ' ' + hundred + ' ';
+        strNum = strNum + units[Math.floor(number / 100) - 1] + ' ' + hundred;
         number = number - (Math.floor(number / 100) * 100);    
+        if ((number - (Math.floor(number / 100) * 10))!=0) {
+            strNum = strNum + ' ';
+        }  
     }        
     
     if (Math.floor(number / 10) > 1) {
