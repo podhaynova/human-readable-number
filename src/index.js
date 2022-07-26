@@ -14,16 +14,16 @@ module.exports = function toReadable (number) {
     
 
     if (Math.floor(number / 100) > 0) {
-        strNum = strNum + units[Math.floor(number / 100) - 1] + " " + hundred;
+        strNum = strNum + units[Math.floor(number / 100) - 1] + ' ' + hundred + ' ';
         number = number - (Math.floor(number / 100) * 100);    
     }        
     
     if (Math.floor(number / 10) > 1) {
-        strNum = strNum + ' ' +  teens[Math.floor(number / 10) - 1];
+        strNum = strNum + teens[Math.floor(number / 10) - 1] + ' ';
         number = number - (Math.floor(number / 10) * 10);    
     }       
     if (number > 0) {
-        strNum = strNum + ' ' + units[number - 1];     
+        strNum = strNum + units[number - 1];     
         number = number - number;
     }
 
