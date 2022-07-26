@@ -19,8 +19,11 @@ module.exports = function toReadable (number) {
     }        
     
     if (Math.floor(number / 10) > 1) {
-        strNum = strNum + teens[Math.floor(number / 10) - 1] + ' ';
-        number = number - (Math.floor(number / 10) * 10);    
+        strNum = strNum + teens[Math.floor(number / 10) - 1];
+        number = number - (Math.floor(number / 10) * 10);   
+        if ((number - (Math.floor(number / 10) * 10))!=0) {
+            strNum = strNum + ' ';
+        }
     }       
     if (number > 0) {
         strNum = strNum + units[number - 1];     
