@@ -18,7 +18,7 @@ module.exports = function toReadable (number) {
         number = number - (Math.floor(number / 100) * 100);    
     }        
     
-    if (Math.floor(number / 10) == 2) {
+    if (Math.floor(number / 10) > 1) {
         strNum = strNum + ' ' +  teens[Math.floor(number / 10) - 1];
         number = number - (Math.floor(number / 10) * 10);    
     }       
